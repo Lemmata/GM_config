@@ -626,12 +626,13 @@ GM_configField.prototype = {
         });
         this.node = wrap;
 
-        for (var i = 0, len = options.length; i < len; ++i) {
-          var option = options[i];
-          wrap.appendChild(create('option', {
-           	value: option,
-            selected: option == value
-          }, 'sometext'));
+        //options is a dictionary of label, key
+        for(var optionName in options){
+            var optionVal = options[optionName];
+            wrap.appendChild(create('option', {
+                value: optionVal,
+                selected: (optionVal == value)
+            }, optionName));
         }
 
         retNode.appendChild(wrap);
