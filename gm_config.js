@@ -629,10 +629,9 @@ GM_configField.prototype = {
         for (var i = 0, len = options.length; i < len; ++i) {
           var option = options[i];
           wrap.appendChild(create('option', {
-            value: option,
-			text: 'this is an option',
+           	value: option,
             selected: option == value
-          }, option));
+          }, 'sometext'));
         }
 
         retNode.appendChild(wrap);
